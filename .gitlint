@@ -58,7 +58,7 @@
 # python-style regex that the commit-msg title must match
 # Note that the regex can contradict with other rules if not used correctly
 # (e.g. title-must-not-contain-word).
-regex=\[(CC|EX)\] (Fix|New|Update): [A-Z]+[a-zA-Z0-9- ]+
+regex=\[(CS|EX|WF)\] (Fix|New|Update): [A-Z]+[a-zA-Z0-9- ]+
 
 # [body-max-line-length]
 # line-length=72
