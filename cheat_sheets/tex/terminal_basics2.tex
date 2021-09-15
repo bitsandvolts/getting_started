@@ -1,0 +1,77 @@
+\documentclass[14pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage[a4paper,margin=1in,landscape]{geometry}
+\usepackage{fancyhdr,graphicx}
+\usepackage[skins,xparse]{tcolorbox}
+\usepackage{pbox}
+\usetikzlibrary{calc}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\newtcolorbox{mybox}[2][]{enhanced,title=#2, 
+fonttitle=\sffamily\Large,top=2pt,bottom=2pt,boxrule=0.4pt,
+coltitle=black,colback=white,
+attach boxed title to top center={yshift=-\tcboxedtitleheight/2,yshifttext=-\tcboxedtitleheight/2},
+boxed title style={colframe=white,colback=white,left=0.2pt,right=0.2pt},
+#1}
+
+\newcommand{\lc}[2]{\texttt{#1} & #2\tabularnewline\rule{0pt}{0.5cm}}
+\newcommand{\pb}[1]{\parbox[t][][t]{1.0\linewidth}{#1} \vspace{-2pt}}
+
+\begin{document}
+
+% Set Title %
+\def\mytitle{Terminal Basics II} % title
+
+% Header/Footer
+\fancyhead[C]{\fontsize{25}{15} \selectfont \mytitle}
+
+%%% IT IS NOT ALLOWED TO CHANGE THIS LINE
+\fancyfoot[L]{\fontsize{20}{15} \selectfont \includegraphics[width=1.5cm]{../../logo.png} \copyright Bits\&Volts \quad contact@bitsandvolts.org}
+%%%
+
+\begin{multicols*}{2}
+
+    \begin{mybox}{Text Editor}
+        \begin{tabular}{rl}
+            \lc{nano file.txt}{open file.txt in a text editor}
+        \end{tabular}
+    \end{mybox}
+    \begin{mybox}{File / Folder Search}
+        \begin{tabular}{rl}
+            \lc{find .\ -name "*.txt"}{find all files with a ".txt" ending}
+            \lc{find .\ -type d}{find all directories in the current folder}
+            \lc{find .\ -name "c*" -type d}{find all directories starting with a "c"}
+            \lc{grep -r "price" .}{scan all files for the word "price"}
+            \lc{grep -nr "price" .}{print line information as well}
+        \end{tabular}
+    \end{mybox}
+    \begin{mybox}{Package Manager}
+        \begin{tabular}{rl}
+            \lc{sudo pacman -S vim}{install vim using root privileges}
+            \lc{sudo pacman -R vim}{remove vim}
+            \lc{sudo pacman -Rcns vim}{remove vim with all dependencies}
+            \lc{pacman -Ss vim}{search for all available vim packages}
+        \end{tabular}
+    \end{mybox}
+    \vphantom{1em}
+    \begin{mybox}{Software}
+        \begin{tabular}{rl}
+            \lc{firefox}{run firefox}
+            \lc{CTRL-C}{commonly used to exit a program}
+            \lc{firefox \&}{run firefox in background}
+            \lc{ps aux}{list all running processes}
+            \lc{ps aux | grep firefox}{search for firefox process}
+            \lc{ps axjf}{show the process tree}
+            \lc{kill <PID>}{kill a process by its ID}
+            \lc{killall firefox}{kill all firefox instances}
+            \lc{htop}{show CPU and RAM utilization}
+        \end{tabular}
+    \end{mybox}
+    
+
+\end{multicols*}
+
+\end{document}
