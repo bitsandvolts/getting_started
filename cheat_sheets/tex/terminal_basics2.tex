@@ -63,7 +63,7 @@ boxed title style={colframe=white,colback=white,left=0.2pt,right=0.2pt},
 \begin{document}
 
 % Set Title %
-\def\mytitle{Terminal Basics} % title
+\def\mytitle{Terminal Basics II} % title
 
 % Header/Footer
 \fancyhead[C]{\fontsize{25}{15} \selectfont \mytitle}
@@ -74,44 +74,40 @@ boxed title style={colframe=white,colback=white,left=0.2pt,right=0.2pt},
 
 \begin{multicols*}{2}
 
-    \begin{mybox}{Navigation}
+    \begin{mybox}{Text Editor}
         \begin{tabular}{rl}
-            \lc{pwd}{print working directory}
-            \lc{ls}{list content of working directory}
-            \lc{ls $<$foleder$>$}{list content of a folder}
-            \lc{cd Desktop}{\pb{change directory to Desktop \\ (relative path)}}
-            \lc{cd /home/$<$your\_name$>$/Desktop}{\pb{change directory to Desktop \\(absolute path)}}
-            \lc{cd ..}{change one directory up}
-            \lc{cd \raisebox{-0.9ex}{\~{}}}{change to your home directory}
-            \lc{cd}{change to your home directory}
-            \lc{cd -}{change to the last directory}
+            \lc{nano file.txt}{open file.txt in a text editor}
         \end{tabular}
     \end{mybox}
-    \begin{mybox}{Files}
+    \begin{mybox}{File / Folder Search}
         \begin{tabular}{rl}
-            \lc{touch $<$filename$>$}{create a new file}
-            \lc{cp $<$file$>$ $<$target$>$}{copy a file to a target location}
-            \lc{mv $<$file$>$ $<$target$>$}{move a file to a target location}
-            \lc{rm $<$file$>$}{remove a file}
-            \lc{rm *.log}{remove all files with .log ending}
-            \lc{rm *}{remove all files in current folder}
-            \lc{cat $<$file$>$}{print the content of a file}
+            \lc{find .\ -name "*.txt"}{find all files with a ".txt" ending}
+            \lc{find .\ -type d}{find all directories in the current folder}
+            \lc{find .\ -name "c*" -type d}{find all directories starting with a "c"}
+            \lc{grep -r "price" .}{scan all files for the word "price"}
+            \lc{grep -nr "price" .}{print line information as well}
+        \end{tabular}
+    \end{mybox}
+    \begin{mybox}{Package Manager}
+        \begin{tabular}{rl}
+            \lc{sudo pacman -S vim}{install vim using root privileges}
+            \lc{sudo pacman -R vim}{remove vim}
+            \lc{sudo pacman -Rcns vim}{remove vim with all dependencies}
+            \lc{pacman -Ss vim}{search for all available vim packages}
         \end{tabular}
     \end{mybox}
     \vphantom{1em}
-    \begin{mybox}{Folders}
+    \begin{mybox}{Software}
         \begin{tabular}{rl}
-            \lc{mkdir $<$foldername$>$}{create a new folder}
-            \lc{cp -r $<$folder$>$ $<$target$>$}{copy a folder to a target location}
-            \lc{mv $<$folder$>$ $<$target$>$}{move a folder to a target location}
-            \lc{rm -r $<$folder$>$}{remove a folder}
-            \lc{rm -r *}{remove all folders in current folder}
-        \end{tabular}
-    \end{mybox}
-    \begin{mybox}{Further information}
-        \begin{tabular}{rl}
-            \lc{man cp}{man page}
-            \lc{cp --help}{help message}
+            \lc{firefox}{run firefox}
+            \lc{CTRL-C}{commonly used to exit a program}
+            \lc{firefox \&}{run firefox in background}
+            \lc{ps aux}{list all running processes}
+            \lc{ps aux | grep firefox}{search for firefox process}
+            \lc{ps axjf}{show the process tree}
+            \lc{kill <PID>}{kill a process by its ID}
+            \lc{killall firefox}{kill all firefox instances}
+            \lc{htop}{show CPU and RAM utilization}
         \end{tabular}
     \end{mybox}
     
