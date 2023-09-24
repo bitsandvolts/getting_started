@@ -1,2 +1,2 @@
 [title-match-regex]
-regex=\[(CS|EX|WF)\] (Fix|New|Update): [A-Z]+[a-zA-Z0-9- ]+
+regex=\[(CS|CF|EX|WF)\] (Fix|New|Update): [A-Z]+[a-zA-Z0-9- ]+
